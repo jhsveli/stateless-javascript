@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="../src/stateless-load.js"></script>
+
+  <style type="text/css">
+    .images { border-radius: 10px; background: #ccc; padding: 20px; display: flex; flex-wrap: wrap;}
+    img {display: block; background: #fff; padding: 10px; margin: 10px;}
+  </style>
+
+  <script type="text/javascript">
+    $(function () {
+        stateless.load('img', function(e) {
+        console.log('Random tech image loaded!');
+      });
+    });
+
+
+    $(function(){
+      window.setInterval(function () {
+          $(".images").append("<img src='http://loremflickr.com/80/80/'/>");
+      }, 3000);
+    });
+  </script>
+</head>
+<body>
+  <div class="images">
+    <img src="http://loremflickr.com/80/80/"/>
+  </div>
+</body>
+</html>
